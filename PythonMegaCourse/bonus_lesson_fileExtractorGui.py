@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+from bonus_lesson_fileExtractor import extract_archive
 
 sg.theme("Black")
 
@@ -18,5 +19,11 @@ window = sg.Window("Archive Extractor",
                            [label2,input2,choose_button2],
                            [extract_button,output_label]])
 
-window.read()
+while True:
+    event,values = window.read()
+    print(event,values)
+    archivepath = values["archive"]
+    dest_dir = values["folder"]
+    extract_archive(archivepath,dest_dir)
+    window["output"].update(value="Extraction done!",text_color="Red")
 window.close()
