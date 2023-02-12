@@ -44,6 +44,10 @@ while True:
                 todo_to_edit = values['todos'][0]
                 new_todo = values['todo']
 
+                #Trying this code from other users
+                if new_todo.endswith('\n') == False:
+                    new_todo = new_todo + '\n'
+                #End of bug fix code
                 todos = functions.get_todos()
                 index = todos.index(todo_to_edit)
                 todos[index] = new_todo
