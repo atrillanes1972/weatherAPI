@@ -9,7 +9,7 @@ password = "cpoiufulxpkfztnx"
 receiver = "hlupercal40k@gmail.com"
 context = ssl.create_default_context()
 
-message = """
+message = """\
 Subject: Testing Email!
 Hi, how are you!
 Bye!
