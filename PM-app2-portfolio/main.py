@@ -14,3 +14,8 @@ with col2:
     and learner, I also practice Aikido regularly at a local dojo. Currently
     working for a Fortune 500 company."""
     st.info(content)
+
+#st.subheader("Below you will find my other projects, feel free to contact me.")
+content = """
+Below you will find my other projects, feel free to contact me."""
+st.write(content)
