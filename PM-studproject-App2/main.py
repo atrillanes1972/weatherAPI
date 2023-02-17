@@ -9,6 +9,7 @@ bios along some function, they do for the company."""
 
 st.title("The Best company")
 st.write(content)
+st.subheader("Our team")
 
 df = pd.read_csv("data.csv")
 col1, empty_col1,col2,empty_col2,col3 = st.columns([1.5,0.5,1.5,0.5,1.5])
