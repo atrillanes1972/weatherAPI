@@ -1,16 +1,20 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from flask import Flask, render_template
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+app = Flask(__name__)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+@app.route('/')
+def home():
+    return render_template("home.html")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+@app.route('/api/v1/<word>/')
+def api(word):
+    definition = word.upper()
+    result_dictionary = {'word': word, 'definition': definition}
+    return result_dictionary
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5002)
